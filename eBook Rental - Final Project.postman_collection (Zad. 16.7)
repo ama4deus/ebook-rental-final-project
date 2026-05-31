@@ -1,0 +1,557 @@
+{
+  "info": {
+    "_postman_id": "52abbdc3-2bf9-418b-a94b-99bafa3dc5dc",
+    "name": "eBook Rental - Final Project",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "47969325",
+    "_collection_link": "https://go.postman.co/collection/47969325-52abbdc3-2bf9-418b-a94b-99bafa3dc5dc?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "ST-01.01 Positive: Register user",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"login\": \"tester777\",\r\n  \"password\": \"SuperHaslo123!\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://ta-ebookrental-be-kodillaedu.replit.app/user/register",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be-kodillaedu",
+            "replit",
+            "app"
+          ],
+          "path": [
+            "user",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ST-01.02 Negative: Register existing email",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"login\": \"tester777\",\r\n  \"password\": \"SuperHaslo123!\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://ta-ebookrental-be-kodillaedu.replit.app/user/register",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be-kodillaedu",
+            "replit",
+            "app"
+          ],
+          "path": [
+            "user",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ST-01.03 Positive: Correct login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"login\": \"tester777\",\r\n  \"password\": \"SuperHaslo123!\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://ta-ebookrental-be-kodillaedu.replit.app/user/login",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be-kodillaedu",
+            "replit",
+            "app"
+          ],
+          "path": [
+            "user",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ST-01.04 Negative: Login with wrong password",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"login\": \"tester777\",\r\n  \"password\": \"ZleHaslo123!\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://ta-ebookrental-be-kodillaedu.replit.app/user/login/",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be-kodillaedu",
+            "replit",
+            "app"
+          ],
+          "path": [
+            "user",
+            "login",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ST-02.01 Positive: Get book collection",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://ta-ebookrental-be-kodillaedu.replit.app/titles/?userId=6194",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be-kodillaedu",
+            "replit",
+            "app"
+          ],
+          "path": [
+            "titles",
+            ""
+          ],
+          "query": [
+            {
+              "key": "userId",
+              "value": "6194"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ST-02.02 Positive: Add new book",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://ta-ebookrental-be-kodillaedu.replit.app/titles/?userId=6194",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be-kodillaedu",
+            "replit",
+            "app"
+          ],
+          "path": [
+            "titles",
+            ""
+          ],
+          "query": [
+            {
+              "key": "userId",
+              "value": "6194"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ST-02.03 Negative: Validation of mandatory fields",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"userId\": 6194,\r\n  \"author\": \"\",\r\n  \"title\": \"The Shining\",\r\n  \"year\": 1977\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://ta-ebookrental-be-kodillaedu.replit.app/titles/?userId=6194",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be-kodillaedu",
+            "replit",
+            "app"
+          ],
+          "path": [
+            "titles",
+            ""
+          ],
+          "query": [
+            {
+              "key": "userId",
+              "value": "6194"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ST-02.04 Positive: Update book details",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"userId\": 6194,\r\n  \"id\": 6195,\r\n  \"author\": \"Stephen King\",\r\n  \"title\": \"The Shining (Revised Edition)\",\r\n  \"year\": 1978\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://ta-ebookrental-be-kodillaedu.replit.app/titles/",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be-kodillaedu",
+            "replit",
+            "app"
+          ],
+          "path": [
+            "titles",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ST-02.05 Positive: Delete book from catalog",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://ta-ebookrental-be-kodillaedu.replit.app/titles/?userId=6194&id=6196",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be-kodillaedu",
+            "replit",
+            "app"
+          ],
+          "path": [
+            "titles",
+            ""
+          ],
+          "query": [
+            {
+              "key": "userId",
+              "value": "6194"
+            },
+            {
+              "key": "id",
+              "value": "6196"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ST-03.01 Positive: Get book copies",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://ta-ebookrental-be-kodillaedu.replit.app/items/?userId=6194&titleId=6195",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be-kodillaedu",
+            "replit",
+            "app"
+          ],
+          "path": [
+            "items",
+            ""
+          ],
+          "query": [
+            {
+              "key": "userId",
+              "value": "6194"
+            },
+            {
+              "key": "titleId",
+              "value": "6195"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ST-03.02 Positive: Add new copy",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"userId\": 6194,\r\n  \"titleId\": 6195,\r\n  \"purchaseDate\": \"2026-05-31\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://ta-ebookrental-be-kodillaedu.replit.app/items/",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be-kodillaedu",
+            "replit",
+            "app"
+          ],
+          "path": [
+            "items",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ST-03.03 Positive: Modify copy details",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": 6198,\r\n  \"userId\": 6194,\r\n  \"purchaseDate\": \"2026-05-30\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://ta-ebookrental-be-kodillaedu.replit.app/items/",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be-kodillaedu",
+            "replit",
+            "app"
+          ],
+          "path": [
+            "items",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ST-03.04 Positive: Delete copy from system",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://ta-ebookrental-be-kodillaedu.replit.app/items/?userId=6194&id=6198",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be-kodillaedu",
+            "replit",
+            "app"
+          ],
+          "path": [
+            "items",
+            ""
+          ],
+          "query": [
+            {
+              "key": "userId",
+              "value": "6194"
+            },
+            {
+              "key": "id",
+              "value": "6198"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ST-04.01 Positive: Get transaction history for copy",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://ta-ebookrental-be-kodillaedu.replit.app/rents/?userId=6194&itemId=6199",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be-kodillaedu",
+            "replit",
+            "app"
+          ],
+          "path": [
+            "rents",
+            ""
+          ],
+          "query": [
+            {
+              "key": "userId",
+              "value": "6194"
+            },
+            {
+              "key": "itemId",
+              "value": "6199"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ST-04.02 Positive: Create new rental",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"userId\": 6194,\r\n  \"itemId\": 6199,\r\n  \"customerName\": \"Jan Kowalski\",\r\n  \"rentDate\": \"2026-05-31\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://ta-ebookrental-be-kodillaedu.replit.app/rents/",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be-kodillaedu",
+            "replit",
+            "app"
+          ],
+          "path": [
+            "rents",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ST-04.04 Positive: Update rental details",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": 6200,\r\n  \"rentDate\": \"2026-05-31\",\r\n  \"returnDate\": \"2026-06-15\",\r\n  \"customerName\": \"Jan Kowalski\",\r\n  \"user\": { \"id\": 6194 },\r\n  \"item\": { \"id\": 6199 }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://ta-ebookrental-be-kodillaedu.replit.app/rents/",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be-kodillaedu",
+            "replit",
+            "app"
+          ],
+          "path": [
+            "rents",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ST-04.05 Positive: Delete rental from history",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://ta-ebookrental-be-kodillaedu.replit.app/rents/?userId=6194&id=6200",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be-kodillaedu",
+            "replit",
+            "app"
+          ],
+          "path": [
+            "rents",
+            ""
+          ],
+          "query": [
+            {
+              "key": "userId",
+              "value": "6194"
+            },
+            {
+              "key": "id",
+              "value": "6200"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ST-04.03 Negative: Rent already rented copy",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"userId\": 6194,\r\n  \"itemId\": 6199,\r\n  \"customerName\": \"Anna Nowak\",\r\n  \"rentDate\": \"2026-05-31\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://ta-ebookrental-be-kodillaedu.replit.app/rents/",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be-kodillaedu",
+            "replit",
+            "app"
+          ],
+          "path": [
+            "rents",
+            ""
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
