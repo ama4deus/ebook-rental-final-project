@@ -3,8 +3,7 @@
     "_postman_id": "52abbdc3-2bf9-418b-a94b-99bafa3dc5dc",
     "name": "eBook Rental - Final Project",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "47969325",
-    "_collection_link": "https://go.postman.co/collection/47969325-52abbdc3-2bf9-418b-a94b-99bafa3dc5dc?source=collection_link"
+    "_exporter_id": "47969325"
   },
   "item": [
     {
@@ -158,10 +157,19 @@
     {
       "name": "ST-02.02 Positive: Add new book",
       "request": {
-        "method": "GET",
+        "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"userId\": 6194,\r\n  \"author\": \"Stephen King\",\r\n  \"title\": \"The Shining\",\r\n  \"year\": 1977\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": "https://ta-ebookrental-be-kodillaedu.replit.app/titles/?userId=6194",
+          "raw": "https://ta-ebookrental-be-kodillaedu.replit.app/titles/",
           "protocol": "https",
           "host": [
             "ta-ebookrental-be-kodillaedu",
@@ -171,12 +179,6 @@
           "path": [
             "titles",
             ""
-          ],
-          "query": [
-            {
-              "key": "userId",
-              "value": "6194"
-            }
           ]
         }
       },
@@ -463,6 +465,36 @@
       "response": []
     },
     {
+      "name": "ST-04.03 Negative: Rent already rented copy",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"userId\": 6194,\r\n  \"itemId\": 6199,\r\n  \"customerName\": \"Anna Nowak\",\r\n  \"rentDate\": \"2026-05-31\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://ta-ebookrental-be-kodillaedu.replit.app/rents/",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be-kodillaedu",
+            "replit",
+            "app"
+          ],
+          "path": [
+            "rents",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
       "name": "ST-04.04 Positive: Update rental details",
       "request": {
         "method": "PUT",
@@ -518,36 +550,6 @@
               "key": "id",
               "value": "6200"
             }
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "ST-04.03 Negative: Rent already rented copy",
-      "request": {
-        "method": "POST",
-        "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n  \"userId\": 6194,\r\n  \"itemId\": 6199,\r\n  \"customerName\": \"Anna Nowak\",\r\n  \"rentDate\": \"2026-05-31\"\r\n}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
-        "url": {
-          "raw": "https://ta-ebookrental-be-kodillaedu.replit.app/rents/",
-          "protocol": "https",
-          "host": [
-            "ta-ebookrental-be-kodillaedu",
-            "replit",
-            "app"
-          ],
-          "path": [
-            "rents",
-            ""
           ]
         }
       },
